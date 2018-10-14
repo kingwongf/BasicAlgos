@@ -41,3 +41,35 @@ def MergeSort(l):
 
 
 
+
+
+def MergeSort2(l):
+    if len(l) >1:
+        m = len(l)//2
+        left = l[:m]
+        right = l[m:]
+        MergeSort2(left)
+        MergeSort2(right)
+        i = 0
+        j =0
+        k = 0
+        while len(left) > i and len(right) > j:
+            if left[i] > right[j]:
+                l[k] = right[j]
+                j+=1
+            else:
+                l[k] = left[i]
+                i+=1
+            k+=1
+        while len(left) > i:
+            l[k] = left[i]
+            i+=1
+            k+=1
+        while len(right) > j:
+            l[k] = right[j]
+            j+=1
+            k+=1
+
+    return l
+
+# print(MergeSort2([6,3,4,2,4,1,39,28]))

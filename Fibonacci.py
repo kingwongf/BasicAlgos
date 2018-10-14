@@ -13,13 +13,13 @@ def fibonacci(n):
     while seq[-1] < n:
         seq.append(seq[-1]+ seq[-2])
     return seq
-@timeit
 
+@timeit
 def nthfibonacci(n):
     seq = [1,1]
     while len(seq) < n:
         seq.append(seq[-1] + seq[-2])
-    return seq[-1]
+    return seq
 
 @timeit
 def dynamic_fibonacci(n):
